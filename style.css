@@ -39,6 +39,58 @@ nav a:hover {
   color: #ffe082;
 }
 
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #43c6ac 0%, #ff7eb3 100%);
+  padding: 18px 40px;
+  box-shadow: 0 2px 12px rgba(67,198,172,0.08);
+}
+
+.navbar-logo {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: color 0.2s;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.navbar-links li a:hover,
+.dashboard-btn:hover {
+  background: #ffe082;
+  color: #43c6ac;
+}
+
+.dashboard-btn {
+  background: #43c6ac;
+  color: #fff !important;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+  border: none;
+}
+
 /* Sections */
 main {
   max-width: 800px;
