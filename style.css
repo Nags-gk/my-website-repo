@@ -1,6 +1,7 @@
 /* General Styles */
 body {
-  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f8ffae 0%, #43c6ac 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -8,9 +9,10 @@ body {
 
 /* Header */
 header {
-  background: #333;
-  color: #fff;
-  padding: 1rem;
+  background: linear-gradient(90deg, #ff758c 0%, #ff7eb3 100%);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
 }
 
 header h1 {
@@ -20,32 +22,57 @@ header h1 {
 nav ul {
   list-style: none;
   padding: 0;
+  margin: 10px 0 0 0;
   display: flex;
-  gap: 1rem;
+  justify-content: center;
+  gap: 30px;
 }
 
 nav a {
-  color: #fff;
+  color: white;
   text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #ffe082;
 }
 
 /* Sections */
 main {
-  padding: 1rem;
+  max-width: 800px;
+  margin: 40px auto;
+  background: rgba(255,255,255,0.85);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 32px;
 }
 
 section {
   margin-bottom: 2rem;
 }
 
+.profile-pic {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #43c6ac;
+  box-shadow: 0 2px 12px rgba(67,198,172,0.2);
+}
+
+section h2 {
+  color: #43c6ac;
+}
+
 /* Footer */
 footer {
-  background: #333;
-  color: #fff;
+  background: linear-gradient(90deg, #43c6ac 0%, #f8ffae 100%);
+  color: #333;
   text-align: center;
-  padding: 1rem;
+  padding: 16px 0;
+  border-top: 2px solid #ff7eb3;
 }
