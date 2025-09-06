@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 1fr auto;
+            min-height: 100vh;
+            grid-template-areas:
+                "sidebar main"
+                "footer footer";
+        }
+        .sidebar {
+            grid-area: sidebar;
+            background: #35424a;
+            color: #fff;
+            padding: 32px 16px;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 1.1rem;
+            min-height: 0;
+        }
+        .main-content {
+            grid-area: main;
+            padding: 32px;
+            background: #f7f7f7;
+        }
+        .footer {
+            grid-area: footer;
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 16px 0;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        @media (max-width: 700px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr auto;
+                grid-template-areas:
+                    "sidebar"
+                    "main"
+                    "footer";
+            }
+            .sidebar {
+                min-height: 60px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-grid">
+        <nav class="sidebar" aria-label="Sidebar">
+            <strong>Sidebar</strong>
+            <ul style="list-style:none; padding:0; margin-top:20px;">
+                <li><a href="#" class="sidebar-btn active">Dashboard</a></li>
+                <li><a href="#" class="sidebar-btn">Settings</a></li>
+                <li><a href="index.html" class="sidebar-btn">Back to Profile</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <h2>Welcome to the Dashboard</h2>
+            <p>This is your main content area. Add your widgets or information here.</p>
+        </main>
+        <footer class="footer">
+            &copy; 2025 Nagaraj GK. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
