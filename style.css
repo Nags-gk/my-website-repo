@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-  background: linear-gradient(135deg, #f8ffae 0%, #43c6ac 100%);
+  background: linear-gradient(135deg, #4b496b 0%, #2d4b45 100%);
   font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(90deg, #ff758c 0%, #ff7eb3 100%);
+  background: linear-gradient(90deg, #e00d1f 0%, #e41a1a 100%);
   color: white;
   padding: 20px 0;
   text-align: center;
@@ -36,7 +36,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #ffe082;
+  color: #12b8c4;
 }
 
 /* Navbar styles */
@@ -44,7 +44,7 @@ nav a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #43c6ac 0%, #ff7eb3 100%);
+  background: linear-gradient(90deg, #43c6ac 0%, #0ba3a3 100%);
   padding: 18px 40px;
   box-shadow: 0 2px 12px rgba(67,198,172,0.08);
   position: sticky;
@@ -80,7 +80,7 @@ nav a:hover {
 
 .navbar-links li a:hover,
 .dashboard-btn:hover {
-  background: #ffe082;
+  background: #d30c0c;
   color: #43c6ac;
 }
 
@@ -133,9 +133,9 @@ section h2 {
 
 /* Footer */
 footer {
-  background: linear-gradient(90deg, #43c6ac 0%, #f8ffae 100%);
+  background: linear-gradient(90deg, #43c6ac 0%, #8be778 100%);
   color: #333;
   text-align: center;
   padding: 16px 0;
-  border-top: 2px solid #ff7eb3;
+  border-top: 2px solid #0f228d;
 }
