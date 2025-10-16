@@ -1,196 +1,241 @@
-/* General Styles */
+/* Base / variables */
+:root{
+  --accent: #4da8ff;       /* single header light-blue color */
+  --accent-contrast: #ffffff;
+  --muted-bg: #f6f7f8;
+  --card-bg: #ffffff;
+  --text: #1f2937;
+  --grey-footer: #6b6b6b;
+  --page-bg-1: #f3f6fb;
+  --page-bg-2: #eef3fb;
+}
+
+/* Reset & body */
+*{box-sizing:border-box}
 body {
-  background: linear-gradient(135deg, #4b496b 0%, #2d4b45 100%);
+  margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  background: linear-gradient(180deg, var(--page-bg-1) 0%, var(--page-bg-2) 100%);
+  color: var(--text);
   line-height: 1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-/* Header */
-header {
-  background: linear-gradient(90deg, #d6525d 0%, #df6565 100%);
-  color: white;
-  padding: 20px 0;
-  text-align: center;
+/* Shared container */
+.container{
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-header h1 {
-  margin: 0;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0 0;
+/* ===== Header: unified single light-blue bar ===== */
+.site-header {
+  background-color: #A8D0E6 !important; /* unified light-blue */
+  padding: 12px 30px;
   display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.2s;
-}
-
-nav a:hover {
-  color: #12b8c4;
-}
-
-/* Navbar styles */
-.navbar {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #43c6ac 0%, #0ba3a3 100%);
-  padding: 18px 40px;
-  box-shadow: 0 2px 12px rgba(67,198,172,0.08);
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+  height: 64px;
 }
 
-.navbar-logo {
-  font-size: 1.7rem;
-  font-weight: bold;
-  color: #fff;
-  letter-spacing: 1px;
-  outline: none;
+/* ensure the inner container uses full width and aligns items */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  gap: 16px;
+  background: transparent !important;
 }
 
+/* Place brand in the center column and make it bold */
+.brand {
+  color: #24305E;
+  font-weight: 800;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+/* Move nav to the right column */
+.navbar {
+  background: transparent !important;
+  display: flex;
+  align-items: center;
+}
+
+/* keep nav list inline and vertically centered */
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 28px;
+  gap: 18px;
   margin: 0;
   padding: 0;
+  align-items: center;
+  background: transparent !important;
 }
 
-.navbar-links li a {
-  color: #fff;
+/* Links: dark blue on light-blue background */
+.navbar-links a {
+  color: #24305E;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1.05rem;
-  transition: color 0.2s;
-  padding: 6px 12px;
-  border-radius: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.18s ease, color 0.18s ease;
 }
 
-.navbar-links li a:hover,
-.dashboard-btn:hover {
-  background: #d36767;
-  color: #43c6ac;
+/* Hover / active */
+.navbar-links a:hover,
+.navbar-links a.active {
+  background-color: #87b9d3;
+  color: #ffffff;
 }
 
+/* subtle pill for dashboard button */
 .dashboard-btn {
-  background: #43c6ac;
-  color: #fff !important;
-  border-radius: 20px;
-  padding: 8px 18px;
-  font-weight: bold;
-  transition: background 0.2s, color 0.2s;
+  background: rgba(36,48,94,0.08);
+  color: #24305E;
+  padding: 8px 14px;
+  border-radius: 18px;
+  font-weight: 700;
   border: none;
 }
 
-/* ABOUT CARD */
-.about-card {
-  max-width: 760px;
-  margin: 48px auto;
-  background: rgba(255,255,255,0.92);
-  border-radius: 14px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.18);
-  overflow: hidden;
-  color: #222;
-}
+/* safety: remove stray margins that create color bands */
+body, .container, header, .site-header { margin: 0; padding: 0; }
 
-.about-card-header {
-  padding: 22px 28px;
-  background: linear-gradient(90deg, rgba(67,198,172,0.12), rgba(255,126,179,0.08));
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-}
-
-.about-card-header h2 {
-  margin: 0;
-  color: #2b6f61;
-  font-size: 1.35rem;
-}
-
-.about-card-body {
-  padding: 28px;
+/* Page grid layout using CSS Grid */
+.site-grid{
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: 220px 1fr 1fr; /* sidebar + two-column content on wide screens */
+  gap: 28px;
+  align-items: start;
+  padding: 34px 0;
+  min-height: calc(100vh - 64px - 80px);
+}
+
+/* Sidebar (clean neutral panel) */
+.sidebar{
+  background: rgba(31,41,55,0.06);
+  color: #0f172a;
+  padding: 20px;
+  border-radius: 10px;
+  height: fit-content;
+  border-left: 3px solid rgba(13,110,253,0.08);
+}
+
+.sidebar h3{ margin-top:0; color:#0f172a; }
+.sidebar ul{ padding-left: 16px; margin: 8px 0 0 0; }
+.sidebar a{ color: #0f172a; text-decoration: none; display:block; padding:6px 0; opacity:0.95; }
+.sidebar a:hover{ color: var(--accent); text-decoration: underline; }
+
+/* Content areas: each .content is a grid child */
+.content{
+  background: transparent;
+  padding: 0;
+}
+
+/* About card (clean professional white card) */
+.about-card{
+  max-width: 760px;
+  margin: 0 auto 28px auto;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(15,23,42,0.06);
+  overflow: hidden;
+  color: var(--text);
+}
+
+.about-card-header{
+  padding: 18px 22px;
+  background: rgba(13,110,253,0.04);
+  border-bottom: 1px solid rgba(15,23,42,0.04);
+}
+
+.about-card-header h2{ margin:0; color: #0b3f69; font-size:1.35rem; }
+
+.about-card-body{
+  padding: 22px;
+  display: grid;
+  grid-template-columns: 120px 1fr; /* two-column layout inside card */
   gap: 20px;
   align-items: start;
 }
 
-/* Profile image (small, professional) */
-.profile-pic-container {
-  display: flex;
-  justify-content: center;
-  align-items: start;
+/* Profile image - slightly smaller and centered in its column */
+.profile-pic-container{ display:flex; justify-content:center; align-items:flex-start; }
+.profile-pic{
+  width: 110px; height: 110px; border-radius:50%;
+  object-fit:cover; border:3px solid var(--accent);
+  box-shadow: 0 6px 14px rgba(15,23,42,0.08); background:#fff; padding:2px;
 }
 
-.profile-pic {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #43c6ac;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  background: #fff;
-  padding: 3px;
+/* About text */
+.about-text p.summary{ margin:0 0 12px 0; color:#334155; }
+.about-card-body h3{ margin:10px 0 6px 0; color:#0b3f69; font-size:1rem; }
+.skills{ margin:6px 0 12px 18px; color:#475569; }
+.skills li{ margin-bottom:6px; }
+
+/* Projects and contact simple styling */
+#projects, #contact {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  background: var(--card-bg);
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(15,23,42,0.06);
 }
 
-/* Text content inside card */
-.summary {
-  margin: 0 0 14px 0;
-  line-height: 1.5;
-  color: #333;
-}
-
-.about-card-body h3 {
-  margin: 8px 0 8px 0;
-  color: #2b6f61;
-  font-size: 1.05rem;
-}
-
-.skills {
-  margin: 0 0 12px 18px;
-  padding: 0;
-  color: #444;
-}
-
-.skills li {
-  margin-bottom: 6px;
-}
-
-/* Ensure card stacks on small screens */
-@media (max-width: 720px) {
-  .about-card-body {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .about-card-body h3 { text-align: center; }
-  .profile-pic-container { margin-bottom: 12px; }
-}
-
-/* Reserve space so fixed footer doesn't cover content */
-main { padding-bottom: 84px; }
-
-/* FOOTER — fixed, grey */
+/* Footer fixed and grey */
 footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   height: 64px;
-  background: #6b6b6b; /* grey */
-  color: #ffffff;
+  background: var(--grey-footer);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
   box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
 }
+
+/* Add space so footer doesn't cover last content */
+main.container{ padding-bottom: 100px; }
+
+/* ---------------------
+   Responsive breakpoints
+   1) <= 1000px: collapse right column (two column -> single)
+   2) <= 640px: mobile single column, header nav stacks
+   --------------------- */
+@media (max-width: 1000px) {
+  .site-grid{
+    grid-template-columns: 200px 1fr; /* sidebar + single content column */
+  }
+  .about-card-body{ grid-template-columns: 110px 1fr; }
+}
+
+@media (max-width: 640px) {
+  .header-inner{ flex-direction: column; gap:12px; align-items: flex-start; }
+  .navbar-links{ flex-wrap: wrap; gap:10px; }
+  .site-grid{
+    grid-template-columns: 1fr; /* no sidebar on small screens */
+    padding: 20px 0;
+  }
+  .sidebar{ order: 2; width:100%; }
+  .about-card{ margin: 12px auto; }
+  .about-card-body{ grid-template-columns: 1fr; text-align: center; }
+  .profile-pic-container{ margin: 0 auto; }
+  .about-card-body h3, .about-card-body p, .skills { text-align: left; }
+  .skills { margin-left: 0; padding-left: 0; list-style-position: inside; }
+}
+
+/* small visual adjustments */
+a{ color: var(--accent); }

@@ -7,22 +7,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="navbar-logo" tabindex="0">MyPortfolio</div>
-    <ul class="navbar-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li>
-        <a href="dashboard.html" class="dashboard-btn">
-          Dashboard
-        </a>
-      </li>
-    </ul>
-  </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">MyPortfolio</div>
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <ul class="navbar-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="dashboard.html" class="dashboard-btn">Dashboard</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <main>
-    <section id="about">
+  <main class="container site-grid">
+
+    <section id="about" class="content">
       <div class="about-card">
         <div class="about-card-header">
           <h2>About Me</h2>
@@ -33,33 +34,46 @@
             <img src="mypicture.jpg" alt="Nagaraj GK" class="profile-pic">
           </div>
 
-          <p class="summary">
-            I’m Nagaraj GK — a Masters student in Software Engineering at SJSU with experience building full‑stack web apps.
-            I focus on creating maintainable, accessible interfaces and reliable backend services.
-          </p>
+          <div class="about-text">
+            <p class="summary">
+              I’m Nagaraj GK — a Masters student in Software Engineering at SJSU with experience building full‑stack web applications.
+              I design maintainable, accessible interfaces and build reliable backend services.
+            </p>
 
-          <h3>Key Skills</h3>
-          <ul class="skills">
-            <li>React, JavaScript (ES6+), TypeScript</li>
-            <li>Node.js, Express, REST APIs</li>
-            <li>CSS (Flexbox, Grid), responsive design</li>
-            <li>Git, testing, CI/CD basics</li>
-          </ul>
+            <h3>Professional Summary</h3>
+            <p>
+              2+ years building web apps with React and Node.js. Comfortable with cloud deployment, CI/CD pipelines,
+              automated testing and RESTful API design. Passionate about performance and developer experience.
+            </p>
 
-          <h3>Interests</h3>
-          <p class="interests">Cloud-native apps, ML integrations, open-source, developer experience.</p>
+            <h3>Key Skills</h3>
+            <ul class="skills">
+              <li>React, TypeScript, modern JavaScript</li>
+              <li>Node.js, Express, REST APIs</li>
+              <li>CSS (Flexbox, Grid), responsive design</li>
+              <li>Git, unit testing, CI/CD</li>
+            </ul>
+
+            <h3>Interests</h3>
+            <p class="interests">Cloud-native apps, ML integrations, open-source, developer tooling.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="projects" class="content">
+      <h2>Projects</h2>
+      <p>Project summaries or cards go here (placeholder).</p>
+    </section>
+
+    <section id="contact" class="content">
       <h2>Contact</h2>
       <p>You can reach me at <a href="mailto:nagarajgk50@email.com">nagarajgk50@email.com</a></p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 My Website</p>
+    <p>© 2025 Nagaraj GK. All rights reserved.</p>
   </footer>
 </body>
 </html>
