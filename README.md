@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**My Website Portfolio** is a personal portfolio website project built with HTML, CSS, and JavaScript. It showcases a professional online presence with a clean, responsive design and includes a dashboard for extended functionality. The project is deployed on GitHub Pages and demonstrates modern web development practices including responsive design, accessibility standards, and Material-UI integration.
+This is a personal portfolio website project built with HTML, CSS, and JavaScript. It showcases a professional online presence with a clean, responsive design and includes a dashboard for extended functionality. The project is deployed on GitHub Pages and demonstrates modern web development practices including responsive design, accessibility standards, and Material-UI integration.
 
 ## Project Concept
 
@@ -33,7 +33,7 @@ This is a full-stack portfolio project designed to:
 ```
 
 ### Deployment
-- **GitHub Pages**: Live hosting for the portfolio
+- **Vercel**: Live hosting for the portfolio
 
 ## Project Structure
 
